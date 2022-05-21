@@ -45,8 +45,6 @@ public class Table extends JFrame implements ActionListener
     Hand cardsPlayer1;
     Hand cardsPlayer2;
 
-
-    
     boolean turn = true;
     boolean draw = false;
     
@@ -176,50 +174,39 @@ public class Table extends JFrame implements ActionListener
 
         
         
-        try {
-            File fi = new File("p2-output.txt"); 
-            fi.delete();
-            
-            String pih1 = cardsPlayer1.toString();
-            pih1 = pih1.substring(1, pih1.length() - 1);
-            System.out.println("Initial Player 1: " + pih1);
 
-            BufferedWriter writer = new BufferedWriter(new FileWriter("p2-output.txt", true));
-            writer.write("Initial Player 1: " + pih1);
+        File fi = new File("p2-output.txt"); 
+        fi.delete();
+        
+        String pih1 = cardsPlayer1.toString();
+        pih1 = pih1.substring(1, pih1.length() - 1);
+        System.out.println("Initial Player 1: " + pih1);
 
-            p2Stack = new JButton("Stack");
-            p2Stack.addActionListener(this);
-            p2Deck = new JButton("Deck ");
-            p2Deck.addActionListener(this);
-            p2Lay = new JButton("Lay  ");
-            p2Lay.addActionListener(this);
-            p2LayOnStack = new JButton("LayOnStack");
-            p2LayOnStack.addActionListener(this);
+        p2Stack = new JButton("Stack");
+        p2Stack.addActionListener(this);
+        p2Deck = new JButton("Deck ");
+        p2Deck.addActionListener(this);
+        p2Lay = new JButton("Lay  ");
+        p2Lay.addActionListener(this);
+        p2LayOnStack = new JButton("LayOnStack");
+        p2LayOnStack.addActionListener(this);
 
-            cardsPlayer2 = new Hand();
-            deal(cardsPlayer2);
-            p2Hand = new DefaultListModel();
+        cardsPlayer2 = new Hand();
+        deal(cardsPlayer2);
+        p2Hand = new DefaultListModel();
 
-            for(int i = 0; i < cardsPlayer2.getNumberOfCards(); i++)
-                p2Hand.addElement(cardsPlayer2.getCard(i));
+        for(int i = 0; i < cardsPlayer2.getNumberOfCards(); i++)
+            p2Hand.addElement(cardsPlayer2.getCard(i));
 
-            p2HandPile = new JList(p2Hand);
+        p2HandPile = new JList(p2Hand);
 
-            String pih2 = cardsPlayer2.toString();
-            pih2 = pih2.substring(1, pih2.length() - 1);
-            System.out.println("Initial Player 2: " + pih2);
+        String pih2 = cardsPlayer2.toString();
+        pih2 = pih2.substring(1, pih2.length() - 1);
+        System.out.println("Initial Player 2: " + pih2);
 
-            writer.append("\nInitial Player 2: " + pih2);
+        System.out.println("Player 1");
 
-            System.out.println("Player 1");
-            
-            writer.append("\nPlayer 1");
 
-            writer.close();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
         middle.add(new HandPanel("Player 2", p2HandPile, p2Stack, p2Deck, p2Lay, p2LayOnStack));
 
@@ -272,14 +259,7 @@ public class Table extends JFrame implements ActionListener
                         draw = true;
                     }
                 }
-                
-                try {
-                    BufferedWriter writer = new BufferedWriter(new FileWriter("p2-output.txt", true));
-                    writer.append("\n\tAdded: " + card.toString());
-                    writer.close();
-                } catch (IOException e1) {
-                    e1.printStackTrace();
-                }
+
                 System.out.println("\tAdded: " + card.toString());
             }
 
@@ -321,13 +301,6 @@ public class Table extends JFrame implements ActionListener
                     draw = true;
                 }
 
-                try {
-                    BufferedWriter writer = new BufferedWriter(new FileWriter("p2-output.txt", true));
-                    writer.append("\n\tAdded: " + card.toString());
-                    writer.close();
-                } catch (IOException e1) {
-                    e1.printStackTrace();
-                }
                 System.out.println("\tAdded: " + card.toString());
             }
         }
@@ -335,10 +308,10 @@ public class Table extends JFrame implements ActionListener
         if(p1Lay == src && turn == true){
             Object [] cards = p1HandPile.getSelectedValues();
             if (cards != null && cards.length > 0){
-                try {
-                    BufferedWriter writer = new BufferedWriter(new FileWriter("p2-output.txt", true));
+
+
                     System.out.print("\tDiscarded: ");
-                    writer.append("\n\tDiscarded: ");
+
 
                     for(int i = 0; i < cards.length; i++)
                     {
@@ -346,10 +319,10 @@ public class Table extends JFrame implements ActionListener
                         
                         if(i != 0){
                             System.out.print(", " + card.toString());
-                            writer.append(", " + card.toString());
+
                         }else{
                             System.out.print(card.toString());
-                            writer.append(card.toString());
+
                         }
                         
                         layCard(card);
@@ -365,30 +338,25 @@ public class Table extends JFrame implements ActionListener
                     String psh = cardsPlayer1.toString();
                     psh = psh.substring(1, psh.length() - 1);
                     System.out.println("\n\tHand now: " + psh);
-                    writer.append("\n\tHand now: " + psh);
+
 
                     
-                    writer.close();
-                } catch (IOException e1) {
-                    e1.printStackTrace();
-                }
+
                 
 
                 if(cardsPlayer1.isEmpty()){
                     winner(cardsPlayer1,cardsPlayer2);
                 }
 
-                try {
-                    BufferedWriter writer = new BufferedWriter(new FileWriter("p2-output.txt", true));
+
+
                     System.out.println("Player 2");
-                    writer.append("\nPlayer 2");
+
                     pt.setText("player two's turn");
                     turn = false;
                     draw = false;
-                    writer.close();
-                } catch (IOException e1) {
-                    e1.printStackTrace();
-                }
+
+
                 
             }
         }
@@ -396,19 +364,19 @@ public class Table extends JFrame implements ActionListener
         if(p2Lay == src && turn == false){
             Object [] cards = p2HandPile.getSelectedValues();
             if (cards != null && cards.length > 0){
-                try {
-                    BufferedWriter writer = new BufferedWriter(new FileWriter("p2-output.txt", true));
+
+
                     System.out.print("\tDiscarded: ");
-                    writer.append("\n\tDiscarded: ");
+
                     for(int i = 0; i < cards.length; i++)
                     {
                         Card card = (Card)cards[i];
                         if(i != 0){
                             System.out.print(", " + card.toString());
-                            writer.append(", " + card.toString());
+
                         }else{
                             System.out.print(card.toString());
-                            writer.append(card.toString());
+
                         }
                         
                         layCard(card);
@@ -425,30 +393,22 @@ public class Table extends JFrame implements ActionListener
                     String psh = cardsPlayer2.toString();
                     psh = psh.substring(1, psh.length() - 1);
                     System.out.println("\n\tHand now: " + psh);
-                    writer.append("\n\tHand now: " + psh);
 
-                    writer.close();
-                } catch (IOException e1) {
-                    e1.printStackTrace();
-                }
+
                 
 
                 if(cardsPlayer2.isEmpty()){
                     winner(cardsPlayer1,cardsPlayer2);
                 }
 
-                try {
-                    BufferedWriter writer = new BufferedWriter(new FileWriter("p2-output.txt", true));
+
                     System.out.println("Player 1");
-                    writer.append("\nPlayer 1");
+
                     pt.setText("player one's turn");
                     turn = true;
                     draw = false;
 
-                    writer.close();
-                } catch (IOException e1) {
-                    e1.printStackTrace();
-                }
+                
 
             }
         }
@@ -465,37 +425,30 @@ public class Table extends JFrame implements ActionListener
                     stackDeck.addCard(card);
                     topOfStack.setIcon(card.getCardImage());
                     
-                    try {
-                        BufferedWriter writer = new BufferedWriter(new FileWriter("p2-output.txt", true));
+
+
                         System.out.println("\tDiscarded: " + card.toString());
-                        writer.append("\n\tDiscarded: " + card.toString());
+
 
                         String psh = cardsPlayer1.toString();
                         psh = psh.substring(1, psh.length() - 1);
                         System.out.println("\tHand now: " + psh);                        
-                        writer.append("\n\tHand now: " + psh);
+;
 
-                        writer.close();
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
-                    }
 
                     if(cardsPlayer1.isEmpty()){
                         winner(cardsPlayer1,cardsPlayer2);
                     }
                     
-                    try {
-                        BufferedWriter writer = new BufferedWriter(new FileWriter("p2-output.txt", true));
-                        writer.append("\nPlayer 2");
+
+
+
                         System.out.println("Player 2");
                         pt.setText("player two's turn");
                         turn = false;
                         draw = false;
 
-                        writer.close();
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
-                    }
+
                     
                     
                 }
@@ -514,38 +467,27 @@ public class Table extends JFrame implements ActionListener
                     stackDeck.addCard(card);
                     topOfStack.setIcon(card.getCardImage());  
 
-                    try {
-                        BufferedWriter writer = new BufferedWriter(new FileWriter("p2-output.txt", true));
+
+
                         System.out.println("\tDiscarded: " + card.toString());
-                        writer.append("\n\tDiscarded: " + card.toString());
+
 
                         String psh = cardsPlayer2.toString();
                         psh = psh.substring(1, psh.length() - 1);
                         System.out.println("\tHand now: " + psh);
-                        writer.append("\n\tHand now: " + psh);
 
-                        writer.append("\nPlayer 1");
-                        writer.close();
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
-                    }
 
                     if(cardsPlayer2.isEmpty()){
                         winner(cardsPlayer1,cardsPlayer2);
                     }
 
-                    try {
-                        BufferedWriter writer = new BufferedWriter(new FileWriter("p2-output.txt", true));
+
                         System.out.println("Player 1");
-                        writer.append("\nPlayer 1");
+
 
                         pt.setText("player one's turn");
                         turn = true;
                         draw = false;
-                        writer.close();
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
-                    }
                 }
             }
         }
@@ -564,22 +506,14 @@ public class Table extends JFrame implements ActionListener
     
     
     void winner(Hand p1, Hand p2) {   
-        try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("p2-output.txt", true));
-            System.out.println("points: " + p1.evaluateHand() + " to " + p2.evaluateHand());
-            if (p1.evaluateHand() < p2.evaluateHand()){
-                writer.append("\nPlayer 1 Wins!!!!");
-                System.out.println("Player 1 Wins!!!!");
-            }else if(p1.evaluateHand() == p2.evaluateHand()){
-                writer.append("\nits a tie!!!!");
-                System.out.println("its a tie!!!!");
-            }else{
-                writer.append("\nPlayer 2 Wins!!!!");
-                System.out.println("Player 2 Wins!!!!");
-            }
-            writer.close();
-        } catch (IOException e1) {
-            e1.printStackTrace();
+
+        System.out.println("points: " + p1.evaluateHand() + " to " + p2.evaluateHand());
+        if (p1.evaluateHand() < p2.evaluateHand()){
+            System.out.println("Player 1 Wins!!!!");
+        }else if(p1.evaluateHand() == p2.evaluateHand()){
+            System.out.println("its a tie!!!!");
+        }else{
+            System.out.println("Player 2 Wins!!!!");
         }
         System.exit(0);
     }
