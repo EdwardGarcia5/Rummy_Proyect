@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=DeckInterface
+comment1.params=
+comment1.target=Card\ peek()
+comment1.text=\r\n\ \ returns\ next\ Card\ in\ a\ deck\ that\ is\ facing\ down\ without\ removing\ it\r\n
+comment2.params=card
+comment2.target=void\ addCard(Card)
+comment2.text=\r\n\ this\ method\ is\ used\ to\ add\ Cards\ to\ a\ Deck.\ \ The\ Deck\ is\ completely\ empty\ when\ it\ is\ initialized.\r\n
+comment3.params=
+comment3.target=int\ getSizeOfDeck()
+comment3.text=\r\n\ returns\ number\ of\ cards\ on\ the\ deck\r\n\ @return\ int\r\n
+comment4.params=
+comment4.target=Card\ dealCard()
+comment4.text=\r\n\ removes\ first\ card\ on\ a\ deck\ so\ equivalent\ to\ flipping\ the\ card\ off\ of\ a\ eck\ that\ is\ faced\ down\r\n\ @return\ <code>null</code>\ if\ there\ are\ no\ cards\ left\ on\ the\ Stack.\ Otherwise\ returns\ Card\r\n
+comment5.params=
+comment5.target=Card\ removeCard()
+comment5.text=\r\n\ removes\ Card\ last\ card\ placed\ on\ a\ deck\ so\ equivalent\ toremoving\ card\ from\ deck\ that\ is\ faced\ up\r\n\ @return\ <code>null</code>\ if\ there\ are\ no\ cards\ left\ on\ the\ deck.\ Otherwise\ removes\ Card\r\n
+comment6.params=
+comment6.target=void\ shuffle()
+comment6.text=\r\n\ Shuffles\ the\ cards\ present\ in\ the\ deck.\r\n
+comment7.params=
+comment7.target=boolean\ isEmpty()
+comment7.text=\r\n\ Looks\ for\ an\ empty\ deck.\r\n\ @return\ <code>true</code>\ if\ there\ are\ no\ cards\ left\ to\ be\ dealt\ from\ the\ deck.\r\n
+comment8.params=
+comment8.target=void\ restoreDeck()
+comment8.text=\r\n\ Restores\ the\ deck\ to\ being\ empty\ and\ ready\ to\ add\ Cards\ to\r\n
+numComments=9

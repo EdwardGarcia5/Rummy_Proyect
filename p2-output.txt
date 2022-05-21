@@ -1,0 +1,10 @@
+Initial Player 1: 8c, qc, 4d, 2d, 9d, 3h, 6h, qh, ks
+Initial Player 2: 5c, kc, ad, td, 5h, th, 3s, as, 8s
+Player 1
+	Added: 5s
+	Discarded: 4d
+	Hand now: 8c, qc, 2d, 9d, 3h, 6h, qh, ks, 5s
+Player 2
+	Discarded: 5c, kc, ad, td, 5h, th, 3s, as, 8s
+	Hand now: 
+Player 2 Wins!!!!

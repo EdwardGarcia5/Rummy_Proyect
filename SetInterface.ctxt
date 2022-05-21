@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=SetInterface
+comment1.params=card
+comment1.target=void\ addCard(Card)
+comment1.text=\r\n\ \ \ \ Must\ override\ the\ behavior\ of\ the\ HandInterface\ so\ that\r\n\ \ \ a\ Set\ only\ accepts\ a\ card\ if\ it\ is\ of\ the\ same\ rank.\r\n
+comment2.params=
+comment2.target=int\ getRankIndex()
+comment2.text=\r\n\ \ \ returns\ the\ rankIndex\ of\ the\ set\r\n\ \ \ \ \ @return\ int\ returns\ int\ corresponding\ to\ rank\ as\ defined\ in\ CardInterface\r\n
+comment3.params=
+comment3.target=char\ getRank()
+comment3.text=\r\n\ \ \ returns\ the\ rank\ of\ the\ set\r\n\ \ @return\ char\ returns\ char\ of\ rank\ as\ defined\ in\ CardInterface\r\n
+comment4.params=
+comment4.target=boolean\ isFull()
+comment4.text=\r\n\ \ Determines\ whether\ Set\ is\ contains\ all\ four\ cards.\r\n\ \ \ \ \ @return\ if\ true\ then\ no\ more\ Card\ may\ be\ added\ to\ the\ set\r\n
+numComments=5

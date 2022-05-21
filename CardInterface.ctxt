@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=CardInterface
+comment1.params=
+comment1.target=java.lang.String\ getImageFile()
+comment1.text=\r\n\ Returns\ a\ String\ iby\ the\ name\ of\ the\ directory\ named\ above\r\n\ concatonated\ with\ the\ toString\ method\ of\ Card\ and\ ".gif"\r\n
+comment2.params=
+comment2.target=char\ getSuit()
+comment2.text=\r\n\ Returns\ the\ suit\ of\ the\ card.\r\n\ @return\ a\ char\ representing\ the\ suit\ value\ of\ the\ card.\r\n
+comment3.params=
+comment3.target=char\ getRank()
+comment3.text=\r\n\ Returns\ the\ rank\ of\ the\ card.\r\n\ @return\ a\ Rank\ constant\ representing\ the\ rank\ value\ of\ the\ card.\r\n
+comment4.params=
+comment4.target=javax.swing.ImageIcon\ getCardImage()
+comment4.text=\r\n\ Returns\ the\ graphic\ image\ of\ the\ card.\r\n\ @return\ an\ icon\ containing\ the\ graphic\ image\ of\ the\ card.\r\n
+comment5.params=
+comment5.target=java.lang.String\ toString()
+comment5.text=\r\n\ Returns\ a\ two\ character\ String\ with\ rank\ being\ represented\ by\ one\ of\ the\ following\ chars\ -\ \ a,1,2,3,4,5,6,7,8,9,t,j,q,k\ -\r\n\ and\ suit\ being\ represented\ by\ one\ of\ the\ following\ chars\ -\ c,d,h,s\r\n\ @return\ the\ name\ of\ the\ card.\r\n
+comment6.params=otherCardObject
+comment6.target=int\ compareTo(java.lang.Object)
+comment6.text=\r\n\ Compares\ two\ cards\ for\ the\ purposes\ of\ sorting.\r\n\ Cards\ should\ be\ ordered\ by\ their\ rank\ index\ as\ defined\ in\ the\ char\ static\ array\ named\ rank.\r\n\ @param\ otherCardObject\ the\ other\ card\r\n\ @return\ a\ negative\ integer,\ zero,\ or\ a\ positive\ integer\ if\ this\ card\ is\r\n\ less\ than,\ equal\ to,\ or\ greater\ than\ the\ referenced\ card.\r\n
+numComments=7

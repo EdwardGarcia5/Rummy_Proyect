@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Table
+comment0.text=\r\n\ \ \ \ This\ GUI\ assumes\ that\ you\ are\ using\ a\ 52\ card\ deck\ and\ that\ you\ have\ 13\ sets\ in\ the\ deck.\r\n\ \ \ \ The\ GUI\ is\ simulating\ a\ playing\ table\r\n\ \ \ \ @author\ Patti\ Ordonez\r\n
+comment1.params=cards
+comment1.target=void\ deal(Hand)
+comment2.params=
+comment2.target=Table()
+comment3.params=e
+comment3.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment4.params=args
+comment4.target=void\ main(java.lang.String[])
+comment5.params=card
+comment5.target=void\ layCard(Card)
+numComments=6
