@@ -329,7 +329,6 @@ public class Table extends JFrame implements ActionListener
                         p1Hand.removeElement(card);
                     }
 
-
                     cardsPlayer1.discardHand();
                     for(int i = 0; i < p1Hand.size(); i++){
                         cardsPlayer1.addCard((Card)p1Hand.get(i));
@@ -382,7 +381,6 @@ public class Table extends JFrame implements ActionListener
                         layCard(card);
                         p2Hand.removeElement(card);
                     }
-                    System.out.println("");
                     
                     
                     cardsPlayer2.discardHand();
