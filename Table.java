@@ -505,7 +505,7 @@ public class Table extends JFrame implements ActionListener
     
     void winner(Hand p1, Hand p2) {   
 
-        System.out.println("points: " + p1.evaluateHand() + " to " + p2.evaluateHand());
+        System.out.println("\npoints: " + p1.evaluateHand() + " to " + p2.evaluateHand());
         if (p1.evaluateHand() < p2.evaluateHand()){
             System.out.println("Player 1 Wins!!!!");
         }else if(p1.evaluateHand() == p2.evaluateHand()){
